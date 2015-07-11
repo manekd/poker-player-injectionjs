@@ -1,7 +1,7 @@
 var _ = require('lodash');
 
 module.exports = {
-  VERSION: "Chuck Norris player 2",
+  VERSION: "Chuck Norris player 3",
   bet_request: function(game_state) {
     var me = this.findMe(game_state);
     var myBet = this.getMyBet(me);

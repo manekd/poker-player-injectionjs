@@ -20,7 +20,7 @@ action=bet_request&game_state={
     "name": "Admiral Ackbar",
     "stack": 1800,
     "status": "active",
-    "bet": 0,
+    "bet": 20,
     "hole_cards": [{
       "rank": "K",
       "suit": "spades"
@@ -34,12 +34,12 @@ action=bet_request&game_state={
     "name": "Injectionjs",
     "stack": 1267,
     "status": "active",
-    "bet": 20,
+    "bet": 10,
     "hole_cards": [{
-      "rank": "3",
+      "rank": "6",
       "suit": "hearts"
     }, {
-      "rank": "Q",
+      "rank": "A",
       "suit": "diamonds"
     }],
     "version": "Chuck Norris player",
@@ -85,22 +85,6 @@ action=bet_request&game_state={
   "orbits": 3,
   "dealer": 1,
   "community_cards": [
-    {
-      "rank": "Q",
-      "suit": "hearts"
-    },
-    {
-      "rank": "Q",
-      "suit": "hearts"
-    },
-    {
-      "rank": "Q",
-      "suit": "hearts"
-    },
-    {
-      "rank": "5",
-      "suit": "hearts"
-    }
 
 
   ],
