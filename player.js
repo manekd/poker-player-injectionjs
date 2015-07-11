@@ -1,22 +1,31 @@
 module.exports = {
   VERSION: "Chuck Norris player",
   bet_request: function(game_state) {
-    var bet = Math.max(400, this.ijs_findMaxBetOfActivePlayer(game_state));
+    var me = this.ijs_findMe(game_state);
+    var myBet = this.ijs_getMyBet(me);
+    var currentBuyIn = this.ijs_getCurrentBuyIn(game_state);
     var cards = this.mergeCards(game_state.hole_cards, game_state.community_cards);
     var rank = this.rankCards(cards);
-    console.log(bet);
     console.log("rank", rank);
-    return bet;
+    var newBet =  1 + currentBuyIn - myBet;
+    console.log("new bet=", newBet);
+    return newBet;
   },
 
-  showdown: function(game_state) {
+  showdown: function(game_state) {},
+
+  ijs_getMyBet: function(player) {
+    return player.bet;
+  },
+
+  ijs_findMe: function(game_state) {
+    return game_state.players[2];
 
   },
 
   ijs_getMinimumRaise: function(game_state) {
     return game_state.minimum_raise;
   },
-
   ijs_getCurrentBuyIn: function(game_state) {
     return game_state.current_buy_in;
   },

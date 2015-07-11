@@ -1,60 +1,90 @@
 action=bet_request&game_state={
-    "tournament_id": "5587222ded8a3e0003000002",
-    "game_id": "55a0d3a652bc730003000041",
-    "round": 0,
-    "players": [{
-      "name": "RoyalFlushFactory",
-      "stack": 1000,
-      "status": "active",
-      "bet": 0,
-      "hole_cards": [],
-      "version": "Mad player",
-      "id": 0
+  "tournament_id": "5587222ded8a3e0003000002",
+  "game_id": "55a0d7b652bc73000300005b",
+  "round": 18,
+  "players": [{
+    "name": "RoyalFlushFactory",
+    "stack": 1103,
+    "status": "active",
+    "bet": 0,
+    "hole_cards": [{
+      "rank": "K",
+      "suit": "hearts"
     }, {
-      "name": "Admiral Ackbar",
-      "stack": 1000,
-      "status": "active",
-      "bet": 0,
-      "hole_cards": [],
-      "version": "Admiral Ackbar lives!",
-      "id": 1
-    }, {
-      "name": "Injectionjs",
-      "stack": 1000,
-      "status": "active",
-      "bet": 0,
-      "hole_cards": [],
-      "version": "Chuck Norris player",
-      "id": 2
-    }, {
-      "name": "FunnyPokerBot",
-      "stack": 1000,
-      "status": "active",
-      "bet": 0,
-      "hole_cards": [],
-      "version": "Default C# folding player",
-      "id": 3
-    }, {
-      "name": "LeanSharp",
-      "stack": 1000,
-      "status": "active",
-      "bet": 0,
-      "hole_cards": [],
-      "version": "Default C# folding player",
-      "id": 4
-    }, {
-      "name": "MJ",
-      "stack": 1000,
-      "status": "active",
-      "bet": 0,
-      "hole_cards": [],
-      "version": "Default C++ folding player",
-      "id": 5
+      "rank": "A",
+      "suit": "spades"
     }],
-    "small_blind": 10,
-    "orbits": 0,
-    "dealer": 2,
-    "community_cards": [],
-    "current_buy_in": 0,
-    "pot": 0
-  }
+    "version": "Aggressive Java folding player",
+    "id": 0
+  }, {
+    "name": "Admiral Ackbar",
+    "stack": 1800,
+    "status": "active",
+    "bet": 0,
+    "hole_cards": [{
+      "rank": "K",
+      "suit": "spades"
+    }, {
+      "rank": "7",
+      "suit": "clubs"
+    }],
+    "version": "Admiral Ackbar lives!",
+    "id": 1
+  }, {
+    "name": "Injectionjs",
+    "stack": 1267,
+    "status": "active",
+    "bet": 20,
+    "hole_cards": [{
+      "rank": "Q",
+      "suit": "hearts"
+    }, {
+      "rank": "Q",
+      "suit": "diamonds"
+    }],
+    "version": "Chuck Norris player",
+    "id": 2
+  }, {
+    "name": "FunnyPokerBot",
+    "stack": 870,
+    "status": "active",
+    "bet": 40,
+    "hole_cards": [{
+      "rank": "8",
+      "suit": "clubs"
+    }, {
+      "rank": "5",
+      "suit": "hearts"
+    }],
+    "version": "Default C# folding player",
+    "id": 3
+  }, {
+    "name": "LeanSharp",
+    "stack": 0,
+    "status": "out",
+    "bet": 0,
+    "hole_cards": [],
+    "version": "Default C# folding player",
+    "id": 4
+  }, {
+    "name": "MJ",
+    "stack": 900,
+    "status": "active",
+    "bet": 0,
+    "hole_cards": [{
+      "rank": "J",
+      "suit": "diamonds"
+    }, {
+      "rank": "5",
+      "suit": "spades"
+    }],
+    "version": "Default C++ folding player",
+    "id": 5
+  }],
+  "small_blind": 20,
+  "orbits": 3,
+  "dealer": 1,
+  "community_cards": [],
+  "current_buy_in": 40,
+  "pot": 60
+}
