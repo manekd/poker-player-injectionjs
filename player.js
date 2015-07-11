@@ -1,11 +1,15 @@
 module.exports = {
     VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
-        return getCurrentBuyIn(game_state) - findMaxBetOfActivePlayer(game_state) + 1;
+        return getCurrentBuyIn(game_state) - findMaxBetOfActivePlayer(game_state) + 1+getMinimumRaise(game_state);
     },
 
     showdown: function(game_state) {
 
+    },
+
+    getMinimumRaise:function(game_state){
+        return game_state.minimum_raise;
     },
 
     getCurrentBuyIn: function(game_state) {
