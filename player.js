@@ -1,7 +1,9 @@
 module.exports = {
     VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
-        return ijs_getCurrentBuyIn(game_state) - ijs_findMaxBetOfActivePlayer(game_state) + 1+ijs_getMinimumRaise(game_state);
+        return
+        1
+        + this.ijs_getMinimumRaise(game_state);
     },
 
     showdown: function(game_state) {
@@ -19,8 +21,8 @@ module.exports = {
     ijs_findMaxBetOfActivePlayer: function(game_state) {
         var maxBet = 0;
         game_state.players.forEach(function(player, index) {
-            if (player.status === 'active' && player.bet > maxBet) {
-                maxBet = player.bet;
+            if (player.status === 'active') {
+                maxBet += player.bet;
             }
         });
 
