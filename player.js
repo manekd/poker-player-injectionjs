@@ -1,15 +1,19 @@
 module.exports = {
     VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
-        var bet = 1+ this.ijs_getMinimumRaise(game_state);
+        var bet = ijs_getCurrentStack(game_state) / 2;
         console.log(bet);
+
         return bet;
-
-
     },
 
     showdown: function(game_state) {
 
+    },
+
+    ijs_getCurrentStack: function(game_state) {
+      var currentUserIdx = game_state.in_action;
+      return game_state.players[currentUserIdx].stack;
     },
 
     ijs_getMinimumRaise:function(game_state){
