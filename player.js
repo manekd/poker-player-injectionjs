@@ -82,7 +82,13 @@ module.exports = {
     return cards;
   },
   rankCards: function(cards) {
+
     var dict = this._makeDict(cards);
+    var fourResult = this.isFourOfKind(dict);
+    if(fourResult){
+      return 5 * 10 * 11;
+    };
+
     var trippleResult = this.isTripple(dict);
     if (trippleResult) {
       var factor = this.getCardValue(trippleResult);
@@ -131,6 +137,14 @@ module.exports = {
     var trippleCount = 0;
     for (var prop in dict) {
       if (dict[prop] >= 3) {
+        return prop;
+      }
+    };
+    return 0;
+  },
+  isFourOfKind: function(dict) {
+    for (var prop in dict) {
+      if (dict[prop] >= 4) {
         return prop;
       }
     };

@@ -86,15 +86,15 @@ action=bet_request&game_state={
   "dealer": 1,
   "community_cards": [
     {
-      "rank": "5",
+      "rank": "Q",
       "suit": "hearts"
     },
     {
-      "rank": "1",
+      "rank": "Q",
       "suit": "hearts"
     },
     {
-      "rank": "2",
+      "rank": "Q",
       "suit": "hearts"
     },
     {
