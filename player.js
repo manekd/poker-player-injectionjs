@@ -1,34 +1,38 @@
 module.exports = {
-  VERSION: "Chuck Norris player",
-  bet_request: function(game_state) {
-    console.log(game_state);
-    var bet = 1 + this.ijs_getMinimumRaise(game_state);
-    console.log(bet);
-    return bet;
-  },
+    VERSION: "Chuck Norris player",
+    bet_request: function(game_state) {
+        var bet = 100;
+        console.log(bet);
 
-  showdown: function(game_state) {
+        return bet;
+    },
 
-  },
+    showdown: function(game_state) {
 
-  ijs_getMinimumRaise: function(game_state) {
-    console.log("state:", game_state);
-    console.log("min:", game_state.minimum_raise);
-    return game_state.minimum_raise;
-  },
+    },
 
-  ijs_getCurrentBuyIn: function(game_state) {
-    return game_state.current_buy_in;
-  },
+    ijs_getCurrentStack: function(game_state) {
+      var currentUserIdx = game_state.in_action;
+      return game_state.players[currentUserIdx].stack;
+    },
 
-  ijs_findMaxBetOfActivePlayer: function(game_state) {
-    var maxBet = 0;
-    game_state.players.forEach(function(player, index) {
-      if (player.status === 'active') {
-        maxBet += player.bet;
-      }
-    });
+    ijs_getMinimumRaise:function(game_state){
+        return game_state.minimum_raise;
+    },
 
-    return maxBet;
-  }
+    ijs_getCurrentBuyIn: function(game_state) {
+        return game_state.current_buy_in;
+    },
+
+    ijs_findMaxBetOfActivePlayer: function(game_state) {
+        var maxBet = 0;
+        game_state.players.forEach(function(player, index) {
+            if (player.status === 'active') {
+                maxBet += player.bet;
+            }
+        });
+
+        return maxBet;
+    }
+>>>>>>> 9d06be31e1f41506232ad3393c19854bb40bbb54
 };
