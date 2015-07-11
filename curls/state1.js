@@ -51,7 +51,6 @@ action=bet_request&game_state={
       "version": "Default C++ folding player",
       "id": 5
     }],
-    "minimum_raise":100,
     "small_blind": 10,
     "orbits": 0,
     "dealer": 2,
