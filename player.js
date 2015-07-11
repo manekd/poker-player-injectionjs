@@ -11,6 +11,7 @@ module.exports = {
     var newBet =  currentBuyIn - myBet;
     if(rank > communityRank) {
           newBet += 11;
+          console.log('Raising.');
     }
     console.log("new bet=", newBet);
     return newBet;
