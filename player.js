@@ -6,7 +6,7 @@ module.exports = {
         var me = this.findMe(game_state);
         var myBet = this.getMyBet(me);
         var currentBuyIn = this.getCurrentBuyIn(game_state);
-        var cards = this.mergeCards(game_state.hole_cards, game_state.community_cards);
+        var cards = this.mergeCards(me.hole_cards, game_state.community_cards);
         var rank = this.rankCards(cards);
         var communityRank = this.rankCards(game_state.community_cards);
         console.log("rank", rank);
@@ -125,7 +125,7 @@ module.exports = {
         case 'A':
             return 14;
         }
-        return (int) card.rank;
+        return card.rank;
     }
 
 
