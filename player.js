@@ -1,9 +1,11 @@
 module.exports = {
     VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
-        return
-        1
-        + this.ijs_getMinimumRaise(game_state);
+        var bet = 1+ this.ijs_getMinimumRaise(game_state);
+        console.log(bet);
+        return bet;
+
+
     },
 
     showdown: function(game_state) {
