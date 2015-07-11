@@ -39,7 +39,7 @@ action=bet_request&game_state={
       "rank": "Q",
       "suit": "hearts"
     }, {
-      "rank": "Q",
+      "rank": "K",
       "suit": "diamonds"
     }],
     "version": "Chuck Norris player",
@@ -84,7 +84,15 @@ action=bet_request&game_state={
   "small_blind": 20,
   "orbits": 3,
   "dealer": 1,
-  "community_cards": [],
+  "community_cards": [
+    {
+      "rank": "Q",
+      "suit": "hearts1"
+    },{
+      "rank": "K",
+      "suit": "hearts"
+    }
+  ],
   "current_buy_in": 40,
   "pot": 60
 }
