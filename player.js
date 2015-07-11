@@ -1,5 +1,5 @@
 module.exports = {
-  VERSION: "Chuck Norris player",
+  VERSION: "Chuck Norris player 2",
   bet_request: function(game_state) {
     var me = this.ijs_findMe(game_state);
     var myBet = this.ijs_getMyBet(me);
