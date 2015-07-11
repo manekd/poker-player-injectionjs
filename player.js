@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 module.exports = {
   VERSION: "Chuck Norris player 2",
   bet_request: function(game_state) {
