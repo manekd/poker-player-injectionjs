@@ -14,6 +14,9 @@ module.exports = {
     if (rank > 0) {
       newBet += rank;
       console.log('Raising.');
+    } 
+    if(cards.length === 7 && rank === 0){
+      return 0;
     }
 
     console.log("new bet=", newBet);
