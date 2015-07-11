@@ -1,7 +1,7 @@
 module.exports = {
     VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
-        var bet = ijs_getCurrentStack(game_state) / 2;
+        var bet = 100;
         console.log(bet);
 
         return bet;
