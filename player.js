@@ -1,7 +1,7 @@
 module.exports = {
     VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
-        var bet = Math.max(200, this.ijs_findMaxBetOfActivePlayer(game_state));
+        var bet = Math.max(400, this.ijs_findMaxBetOfActivePlayer(game_state));
         console.log(bet);
         return bet;
     },
