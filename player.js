@@ -23,11 +23,11 @@ module.exports = {
     console.log("totalRank=", totalRank);
     console.log("myRank=", myRank);
 
-    if (cards.length === 7 && totalRank === 0) {
+    if (cards.length === 6 && totalRank === 0) {
       return 0;
     }
 
-    if (totalRank <= commonRank) {
+    if (totalRank <= commonRank && cards.length === 6) {
       return 0;
     }
 
