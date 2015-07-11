@@ -6,8 +6,12 @@ module.exports = {
     var currentBuyIn = this.ijs_getCurrentBuyIn(game_state);
     var cards = this.mergeCards(game_state.hole_cards, game_state.community_cards);
     var rank = this.rankCards(cards);
+    var communityRank = this.rankCards(game_state.community_cards);
     console.log("rank", rank);
-    var newBet =  1 + currentBuyIn - myBet;
+    var newBet =  currentBuyIn - myBet;
+    if(rank > communityRank) {
+          newBet += 11;
+    }
     console.log("new bet=", newBet);
     return newBet;
   },
