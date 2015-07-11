@@ -6,16 +6,28 @@ module.exports = {
     var me = this.findMe(game_state);
     var myBet = this.getMyBet(me);
     var currentBuyIn = this.getCurrentBuyIn(game_state);
+    var myRank = this.rankCards(me.hole_cards);
+    var commonRank = this.rankCards(game_state.community_cards);
+
     var cards = this.mergeCards(me.hole_cards, game_state.community_cards);
-    var rank = this.rankCards(cards);
+    var totalRank = this.rankCards(cards);
     var communityRank = this.rankCards(game_state.community_cards);
-    console.log("rank", rank);
+    console.log("rank", totalRank);
     var newBet = currentBuyIn - myBet;
-    if (rank > 0) {
-      newBet += rank;
+
+    if (totalRank > 0) {
+      newBet += totalRank;
       console.log('Raising.');
     }
-    if(cards.length === 7 && rank === 0){
+    console.log("commonRank=", communityRank);
+    console.log("totalRank=", totalRank);
+    console.log("myRank=", myRank);
+
+    if (cards.length === 7 && totalRank === 0) {
+      return 0;
+    }
+
+    if (totalRank <= commonRank) {
       return 0;
     }
 
@@ -54,16 +66,19 @@ module.exports = {
   mergeCards: function(mycards, commonCards) {
     var cards = [];
     var i = 0;
+    console.log("merge step started", cards, mycards, commonCards);
     if (mycards) {
       for (i = 0; i < mycards.length; i++) {
         cards.push(mycards[i]);
       }
     }
+    console.log("merge step 1", cards);
     if (commonCards) {
       for (i = 0; i < commonCards.length; i++) {
         cards.push(commonCards[i]);
       }
     }
+    console.log("merge step 2", cards);
     return cards;
   },
   rankCards: function(cards) {
@@ -76,10 +91,10 @@ module.exports = {
     if (this.isDoublePair(dict)) {
       return 2 * 8 * 10;
     };
-    var pairResult =  this.isPair(dict);
+    var pairResult = this.isPair(dict);
     if (pairResult) {
       var factor = this.getCardValue(pairResult);
-      return factor * 10 ;
+      return factor * 10;
     }
 
     return 0;
@@ -115,7 +130,6 @@ module.exports = {
   isTripple: function(dict) {
     var trippleCount = 0;
     for (var prop in dict) {
-      console.log("prop = ", prop, dict[prop]);
       if (dict[prop] >= 3) {
         return prop;
       }
