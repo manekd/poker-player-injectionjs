@@ -49,13 +49,14 @@ module.exports = {
   },
   mergeCards: function(mycards, commonCards) {
     var cards = [];
+    var i =0;
     if (mycards) {
-      for (var i = 0; i < mycards.length; i++) {
+      for (i = 0; i < mycards.length; i++) {
         cards.push(mycards[i]);
       }
     }
     if (commonCards) {
-      for (var i = 0; i < commonCards.length; i++) {
+      for (i = 0; i < commonCards.length; i++) {
         cards.push(commonCards[i]);
       }
     }
