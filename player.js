@@ -11,8 +11,8 @@ module.exports = {
     var communityRank = this.rankCards(game_state.community_cards);
     console.log("rank", rank);
     var newBet = currentBuyIn - myBet;
-    if (rank > communityRank) {
-      newBet += 11;
+    if (rank > 0) {
+      newBet += rank;
       console.log('Raising.');
     }
 
@@ -64,14 +64,19 @@ module.exports = {
     return cards;
   },
   rankCards: function(cards) {
-    if (this.isTripple(cards)) {
-      return 3;
+    var dict = this._makeDict(cards);
+    var trippleResult = this.isTripple(dict);
+    if (trippleResult) {
+      var factor = this.getCardValue(trippleResult);
+      return 3 * 10 * factor;
     };
-    if (this.isDoublePair(cards)) {
-      return 2;
+    if (this.isDoublePair(dict)) {
+      return 2 * 8 * 10;
     };
-    if (this.isPair(cards)) {
-      return 1;
+    var pairResult =  this.isPair(dict);
+    if (pairResult) {
+      var factor = this.getCardValue(pairResult);
+      return factor * 10 ;
     }
 
     return 0;
@@ -87,17 +92,15 @@ module.exports = {
     });
     return dict;
   },
-  isPair: function(cards) {
-    var dict = this._makeDict(cards);
+  isPair: function(dict) {
     for (var prop in dict) {
       if (dict[prop] >= 2) {
-        return true;
+        return prop;
       }
     };
-    return false;
+    return 0;
   },
-  isDoublePair: function(cards) {
-    var dict = this._makeDict(cards);
+  isDoublePair: function(dict) {
     var pairCount = 0;
     for (var prop in dict) {
       if (dict[prop] >= 2) {
@@ -106,22 +109,19 @@ module.exports = {
     };
     return pairCount >= 2;
   },
-  isTripple: function(cards) {
-    var dict = this._makeDict(cards);
+  isTripple: function(dict) {
     var trippleCount = 0;
-    console.log("in tripple: cards = ", cards);
     for (var prop in dict) {
       console.log("prop = ", prop, dict[prop]);
       if (dict[prop] >= 3) {
-        trippleCount++;
+        return prop;
       }
     };
-
-    return trippleCount >= 1;
+    return 0;
   },
 
-  getCardValue: function(card) {
-    switch (card.rank) {
+  getCardValue: function(rank) {
+    switch (rank) {
       case 'J':
         return 11;
       case 'Q':
@@ -131,7 +131,7 @@ module.exports = {
       case 'A':
         return 14;
     }
-    return card.rank;
+    return parseint(rank);
   }
 
 

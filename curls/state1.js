@@ -36,10 +36,10 @@ action=bet_request&game_state={
     "status": "active",
     "bet": 20,
     "hole_cards": [{
-      "rank": "Q",
+      "rank": "J",
       "suit": "hearts"
     }, {
-      "rank": "K",
+      "rank": "5",
       "suit": "diamonds"
     }],
     "version": "Chuck Norris player",
@@ -89,7 +89,7 @@ action=bet_request&game_state={
       "rank": "Q",
       "suit": "hearts1"
     },{
-      "rank": "K",
+      "rank": "J",
       "suit": "hearts"
     }
   ],
