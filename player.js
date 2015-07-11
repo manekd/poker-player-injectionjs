@@ -3,7 +3,6 @@ module.exports = {
     bet_request: function(game_state) {
         var bet = 100;
         console.log(bet);
-
         return bet;
     },
 
@@ -34,5 +33,4 @@ module.exports = {
 
         return maxBet;
     }
->>>>>>> 9d06be31e1f41506232ad3393c19854bb40bbb54
 };
