@@ -1,7 +1,5 @@
 module.exports = {
-
-    VERSION: "Default JavaScript folding player",
-
+    VERSION: "Chuck Norris player",
     bet_request: function(game_state) {
         return getCurrentBuyIn(game_state) - findMaxBetOfActivePlayer(game_state) + 1;
     },
@@ -13,7 +11,6 @@ module.exports = {
     getCurrentBuyIn: function(game_state) {
         return game_state.current_buy_in;
     },
-
 
     findMaxBetOfActivePlayer: function(game_state) {
         var maxBet = 0;
